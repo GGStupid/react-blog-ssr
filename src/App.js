@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Login from './containers/Login/Login'
+import Posts from './containers/Posts/Posts'
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +13,10 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Route exact path='/' component={Login}></Route>
+          <div>
+            <Route exact path='/' component={Login} />
+            <Route path='/posts' component={Posts} />
+          </div>
         </Router>
       </div>
     );
